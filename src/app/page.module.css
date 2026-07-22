@@ -348,13 +348,17 @@
 }
 
 @media (max-width: 900px) {
-  /* Hero image (slide 1) has the wordmark baked into the photo itself —
-     height:100vh + object-fit:cover crops it almost entirely on portrait
-     phones. Switching the section to the image's own aspect ratio shows
-     it in full, with no crop and no letterboxing. */
+  /* Hero image (slide 1) has the wordmark baked into the photo itself.
+     height:100vh + object-fit:cover crops too tight on narrow phones (cuts
+     the text at both edges), but locking to the photo's own landscape
+     ratio (2752:1536) leaves the section way too short. Use a portrait
+     crop ratio instead — a centered vertical slice through the image that
+     keeps the full wordmark in frame while still filling most of the
+     screen, matching object-position: center on object-fit: cover. */
   .heroImageSection {
     height: auto;
-    aspect-ratio: 2752 / 1536;
+    aspect-ratio: 1536 / 2752;
+    max-height: 100vh;
   }
 
   .storyIntro {
