@@ -348,17 +348,21 @@
 }
 
 @media (max-width: 900px) {
-  /* Hero image (slide 1) has the wordmark baked into the photo itself.
-     height:100vh + object-fit:cover crops too tight on narrow phones (cuts
-     the text at both edges), but locking to the photo's own landscape
-     ratio (2752:1536) leaves the section way too short. Use a portrait
-     crop ratio instead — a centered vertical slice through the image that
-     keeps the full wordmark in frame while still filling most of the
-     screen, matching object-position: center on object-fit: cover. */
+  /* Hero image (slide 1) has the wordmark baked into the photo, and the
+     tagline alone spans ~2/3 of the image's width. On a narrow phone,
+     no crop can both fill the screen edge-to-edge AND keep that text
+     uncropped — cover always cuts it. So stop cropping: show the full
+     photo via object-fit:contain (see .heroImage below) and let the
+     section's own dark green background fill in around it, matching the
+     nav/footer green so it reads as a deliberate mat, not empty space.
+     The section itself still fills the full viewport height. */
   .heroImageSection {
-    height: auto;
-    aspect-ratio: 1536 / 2752;
-    max-height: 100vh;
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .heroImage {
+    object-fit: contain;
   }
 
   .storyIntro {
