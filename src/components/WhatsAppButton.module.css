@@ -1,0 +1,19 @@
+.button {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 40;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  background: var(--aur-whatsapp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease;
+}
+
+.button:hover {
+  transform: scale(1.08);
+}

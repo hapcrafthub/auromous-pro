@@ -1,0 +1,130 @@
+.section {
+  padding: 64px 48px 100px;
+}
+
+.grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  padding-right: 80px;
+}
+
+.imageFrame {
+  width: 100%;
+  height: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 78%;
+  max-height: 78%;
+  object-fit: contain;
+  transform: scale(1.18);
+}
+
+.eyebrow {
+  color: var(--aur-green);
+  opacity: 0.55;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.title {
+  color: var(--aur-green);
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+
+.description {
+  color: var(--aur-green);
+  opacity: 0.7;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 40px;
+  max-width: 480px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 340px;
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--aur-gold);
+  color: var(--aur-green);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.primaryButton:hover {
+  background: var(--aur-cream);
+  color: var(--aur-green);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--aur-green);
+  color: var(--aur-cream);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(215, 167, 81, 0.4);
+  transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.secondaryButton:hover {
+  background: var(--aur-green-light);
+  transform: translateY(-2px);
+}
+
+.contactButton:hover {
+  background: var(--aur-gold);
+  color: var(--aur-green);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+    gap: 32px;
+  }
+
+  .imageFrame {
+    height: 360px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}

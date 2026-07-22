@@ -1,0 +1,342 @@
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: var(--aur-green);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 2px solid var(--aur-gold);
+}
+
+.navFixed {
+  position: fixed;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.logo span:first-child {
+  color: var(--aur-gold);
+}
+
+.logo span:last-child {
+  color: var(--aur-cream);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: 1px solid rgba(215, 167, 81, 0.4);
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: var(--aur-gold);
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-bottom: -14px;
+}
+
+.navLink {
+  color: var(--aur-cream);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 6px 9px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--aur-gold);
+  background: rgba(215, 167, 81, 0.12);
+}
+
+.drop {
+  position: absolute;
+  top: 100%;
+  left: -16px;
+  background: var(--aur-green);
+  border: 1px solid rgba(215, 167, 81, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 8px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.navItem:hover .drop,
+.navItem[data-open="true"] .drop {
+  max-height: 700px;
+  opacity: 1;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.dropProducts {
+  width: 340px;
+}
+
+.dropSimple {
+  width: 240px;
+}
+
+.catRow {
+  border-bottom: 1px solid rgba(234, 232, 223, 0.08);
+}
+
+.catHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 13px 14px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-oswald);
+}
+
+.catName {
+  color: var(--aur-gold);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.catArrow {
+  color: var(--aur-gold);
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: transform 0.3s ease;
+}
+
+.catArrowOpen {
+  transform: rotate(180deg);
+}
+
+.catItems {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.catItemsOpen {
+  max-height: 700px;
+  opacity: 1;
+}
+
+.dropItem {
+  display: block;
+  margin: 0 6px 4px;
+  padding: 10px 12px;
+  color: var(--aur-cream);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  border-radius: 8px;
+  white-space: normal;
+}
+
+.dropItem:hover {
+  color: var(--aur-gold);
+  background: rgba(215, 167, 81, 0.1);
+}
+
+.simpleItem {
+  display: block;
+  margin-bottom: 4px;
+  padding: 13px 18px;
+  color: var(--aur-cream);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.simpleItem:hover {
+  color: var(--aur-gold);
+  background: rgba(215, 167, 81, 0.1);
+}
+
+.searchArea {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(234, 232, 223, 0.16);
+  border: 1.5px solid var(--aur-gold);
+  border-radius: 999px;
+  padding: 9px 16px;
+  width: 100%;
+  max-width: 220px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease,
+    border-color 0.25s ease, max-width 0.25s ease;
+}
+
+.searchBox:hover,
+.searchBox:focus-within {
+  background: rgba(215, 167, 81, 0.22);
+  box-shadow: 0 10px 26px rgba(215, 167, 81, 0.35);
+  transform: translateY(-2px) scale(1.04);
+  border-color: var(--aur-cream);
+  max-width: 250px;
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  color: var(--aur-gold);
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--aur-cream);
+  font-family: var(--font-oswald);
+  font-size: 13px;
+  font-weight: 500;
+  width: 100%;
+  min-width: 0;
+  letter-spacing: 0.01em;
+}
+
+.searchInput::placeholder {
+  color: rgba(234, 232, 223, 0.6);
+}
+
+.searchResults {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 260px;
+  background: var(--aur-green);
+  border: 1px solid rgba(215, 167, 81, 0.3);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-height: 340px;
+  overflow-y: auto;
+  z-index: 5;
+}
+
+.searchResultItem {
+  display: block;
+  padding: 12px 18px;
+  color: var(--aur-cream);
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(234, 232, 223, 0.08);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchResultItem:hover {
+  color: var(--aur-gold);
+  background: rgba(215, 167, 81, 0.08);
+}
+
+.searchEmpty {
+  padding: 14px 18px;
+  color: var(--aur-cream);
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    flex-direction: column;
+  }
+
+  .topRow {
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .linksOpen {
+    display: flex;
+  }
+
+  .navItem {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .drop {
+    position: static;
+    width: 100%;
+  }
+
+  .searchArea {
+    display: none;
+    width: 100%;
+  }
+
+  .searchAreaOpen {
+    display: flex;
+  }
+
+  .searchBox {
+    max-width: none;
+  }
+}

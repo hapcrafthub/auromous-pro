@@ -1,0 +1,145 @@
+.footer {
+  background: var(--aur-green);
+  padding: 80px 48px 40px;
+}
+
+.inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: baseline;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+}
+
+.brandLogo span:first-child {
+  color: var(--aur-gold);
+}
+
+.brandLogo span:last-child {
+  color: var(--aur-cream);
+}
+
+.brandBlurb {
+  color: var(--aur-cream);
+  opacity: 0.55;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 280px;
+  margin: 0;
+}
+
+.colTitle {
+  color: var(--aur-gold);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  transition: letter-spacing 0.25s ease;
+}
+
+.colTitle:hover {
+  letter-spacing: 0.16em;
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.colLink {
+  color: var(--aur-cream);
+  opacity: 0.6;
+  font-weight: 300;
+  font-size: 15px;
+  padding: 6px 10px;
+  margin: 0 -10px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  width: fit-content;
+}
+
+.colLink:hover {
+  color: var(--aur-gold);
+  opacity: 1;
+  background: rgba(215, 167, 81, 0.12);
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid rgba(234, 232, 223, 0.3);
+  color: var(--aur-cream);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.socialIcon:hover {
+  background: var(--aur-gold);
+  color: var(--aur-green);
+  border-color: var(--aur-gold);
+}
+
+.handle {
+  color: var(--aur-cream);
+  opacity: 0.75;
+  font-weight: 500;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  margin-left: 8px;
+}
+
+.bottomBar {
+  border-top: 1px solid rgba(234, 232, 223, 0.15);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bottomText {
+  color: var(--aur-cream);
+  opacity: 0.4;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

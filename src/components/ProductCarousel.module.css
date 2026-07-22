@@ -1,0 +1,154 @@
+.wrap {
+  background: var(--aur-cream);
+  border-radius: 24px;
+  padding: 32px 24px;
+}
+
+.track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 8px 8px 16px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 380px;
+  scroll-snap-align: start;
+  display: block;
+  padding: 20px 8px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.imageFrame {
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--aur-cream);
+  border-radius: 12px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 20px rgba(34, 72, 50, 0.2));
+  transform: scale(1.12);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover .image {
+  transform: scale(1.23);
+}
+
+.cardTitle {
+  color: var(--aur-green);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  margin: 20px 0 4px;
+  text-align: center;
+}
+
+.cardBotanical {
+  color: var(--aur-gold-muted);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.moreCard {
+  flex: 0 0 auto;
+  width: 380px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 8px;
+  text-decoration: none;
+}
+
+.moreCircle {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--aur-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  color: var(--aur-gold);
+}
+
+.moreCard:hover .moreCircle {
+  transform: scale(1.08);
+}
+
+.moreTitle {
+  color: var(--aur-green);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.swipeRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.swipePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--aur-green);
+  border-radius: 999px;
+  padding: 12px 28px;
+  box-shadow: 0 12px 28px rgba(34, 72, 50, 0.3);
+}
+
+.swipeLabel {
+  color: var(--aur-gold);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.swipeTrack {
+  width: 140px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(234, 232, 223, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.swipeThumb {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--aur-gold);
+  transition: left 0.15s ease;
+}

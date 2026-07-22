@@ -1,0 +1,142 @@
+.page {
+  background: var(--aur-green);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgImage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(18px) brightness(0.55);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+.bgOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(34, 72, 50, 0.55);
+  z-index: 0;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--aur-cream);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(215, 167, 81, 0.4);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--aur-green);
+  background: var(--aur-gold);
+  border-color: var(--aur-gold);
+}
+
+.section {
+  padding: 64px 48px 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.imageFrame {
+  width: 100%;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  transform: scale(1.3);
+}
+
+.eyebrow {
+  color: var(--aur-cream);
+  opacity: 0.55;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.title {
+  color: var(--aur-cream);
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+
+.description {
+  color: var(--aur-cream);
+  opacity: 0.85;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 40px;
+  max-width: 480px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--aur-gold);
+  color: var(--aur-green);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: 999px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ctaButton:hover {
+  background: var(--aur-cream);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .imageFrame {
+    height: 360px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+}

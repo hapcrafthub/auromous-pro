@@ -1,0 +1,51 @@
+:root {
+  --aur-cream: #eae8df;
+  --aur-cream-alt: #e7e6dd;
+  --aur-green: #224832;
+  --aur-green-light: #2c5b3f;
+  --aur-green-dark: #132a1c;
+  --aur-gold: #d7a751;
+  --aur-gold-muted: #b8863e;
+  --aur-whatsapp: #25d366;
+  --font-oswald: "Oswald", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--aur-cream);
+  color: var(--aur-green);
+  font-family: var(--font-oswald);
+}
+
+a {
+  color: var(--aur-gold);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--aur-gold);
+  color: var(--aur-green);
+}
+
+/* Keep anchor-scrolled sections clear of the fixed/sticky nav bar. */
+section[id],
+footer[id] {
+  scroll-margin-top: 100px;
+}
