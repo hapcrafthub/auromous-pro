@@ -132,7 +132,8 @@
   transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.goldPillButton:hover {
+.goldPillButton:hover,
+.goldPillButton:active {
   background: var(--aur-cream);
   color: var(--aur-green);
   transform: translateY(-3px);
@@ -195,7 +196,8 @@
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.storyCard:hover {
+.storyCard:hover,
+.storyCard:active {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
 }
@@ -346,9 +348,23 @@
 }
 
 @media (max-width: 900px) {
+  /* Hero image (slide 1) has the wordmark baked into the photo itself —
+     height:100vh + object-fit:cover crops it almost entirely on portrait
+     phones. Switching the section to the image's own aspect ratio shows
+     it in full, with no crop and no letterboxing. */
+  .heroImageSection {
+    height: auto;
+    aspect-ratio: 2752 / 1536;
+  }
+
   .storyIntro {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
+    margin-bottom: 36px;
+  }
+
+  .story {
+    padding: 64px 24px;
   }
 
   .storyGrid {
@@ -362,6 +378,36 @@
   .heroVideoContent {
     padding: 140px 24px 80px;
   }
+
+  .products {
+    padding: 56px 16px;
+  }
+
+  .productsHeadline {
+    font-size: 32px;
+  }
+
+  .wholesale {
+    padding: 40px 16px;
+  }
+
+  .wholesaleHeadline {
+    font-size: 22px;
+  }
+
+  .flagGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    gap: 18px 8px;
+  }
+
+  .flagName {
+    white-space: normal;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.25;
+  }
 }
 
 @media (max-width: 560px) {
@@ -371,5 +417,9 @@
 
   .heroTitle {
     font-size: 32px;
+  }
+
+  .flagGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

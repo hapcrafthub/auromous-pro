@@ -131,7 +131,8 @@
   font-family: var(--font-oswald);
 }
 
-.submitButton:hover {
+.submitButton:hover,
+.submitButton:active {
   background: var(--aur-cream);
   transform: translateY(-2px);
 }

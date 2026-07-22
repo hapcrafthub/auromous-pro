@@ -46,7 +46,8 @@
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-.backLink:hover {
+.backLink:hover,
+.backLink:active {
   color: var(--aur-green);
   background: var(--aur-gold);
   border-color: var(--aur-gold);

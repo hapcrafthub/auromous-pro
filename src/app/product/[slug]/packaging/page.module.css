@@ -121,7 +121,8 @@
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.ctaButton:hover {
+.ctaButton:hover,
+.ctaButton:active {
   background: var(--aur-cream);
   transform: translateY(-2px);
 }

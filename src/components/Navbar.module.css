@@ -78,7 +78,8 @@
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.navLink:hover {
+.navLink:hover,
+.navLink:active {
   color: var(--aur-gold);
   background: rgba(215, 167, 81, 0.12);
 }
@@ -179,7 +180,8 @@
   white-space: normal;
 }
 
-.dropItem:hover {
+.dropItem:hover,
+.dropItem:active {
   color: var(--aur-gold);
   background: rgba(215, 167, 81, 0.1);
 }
@@ -196,7 +198,8 @@
   white-space: nowrap;
 }
 
-.simpleItem:hover {
+.simpleItem:hover,
+.simpleItem:active {
   color: var(--aur-gold);
   background: rgba(215, 167, 81, 0.1);
 }

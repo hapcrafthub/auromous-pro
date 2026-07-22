@@ -27,7 +27,8 @@
   transition: transform 0.3s ease;
 }
 
-.card:hover {
+.card:hover,
+.card:active {
   transform: translateY(-4px);
 }
 
@@ -51,7 +52,8 @@
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card:hover .image {
+.card:hover .image,
+.card:active .image {
   transform: scale(1.23);
 }
 
@@ -98,7 +100,8 @@
   color: var(--aur-gold);
 }
 
-.moreCard:hover .moreCircle {
+.moreCard:hover .moreCircle,
+.moreCard:active .moreCircle {
   transform: scale(1.08);
 }
 
@@ -151,4 +154,33 @@
   border-radius: 999px;
   background: var(--aur-gold);
   transition: left 0.15s ease;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    padding: 20px 14px;
+    border-radius: 18px;
+  }
+
+  .track {
+    gap: 14px;
+  }
+
+  /* Fixed 380px cards overflowed narrow viewports, so only a sliver of the
+     image showed (looked shifted/cropped) and titles got clipped. Size the
+     card off the viewport instead so it — and its image — fit and center
+     properly, with the next card peeking in as a scroll affordance. */
+  .card,
+  .moreCard {
+    width: min(300px, 78vw);
+  }
+
+  .imageFrame {
+    height: 240px;
+  }
+
+  .cardTitle,
+  .moreTitle {
+    font-size: 17px;
+  }
 }

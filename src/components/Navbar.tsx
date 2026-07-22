@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type MouseEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CATEGORIES, PRODUCTS } from "@/lib/products";
@@ -31,6 +31,23 @@ export default function Navbar({ variant = "sticky" }: { variant?: "sticky" | "f
   function toggleDropdown(key: "products" | "packaging" | "shipping") {
     setOpenDropdown((cur) => (cur === key ? null : key));
   }
+
+  // On mobile, scrolling the page while the hamburger menu is open should
+  // close it — otherwise it stays open (covering content) until the user
+  // taps the hamburger icon again.
+  const scrollStartRef = useRef(0);
+  useEffect(() => {
+    if (!menuOpen) return;
+    scrollStartRef.current = window.scrollY;
+    function handleScroll() {
+      if (Math.abs(window.scrollY - scrollStartRef.current) > 10) {
+        setMenuOpen(false);
+        setOpenDropdown(null);
+      }
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
 
   // When already on the target page, scroll manually instead of relying on
   // <Link>'s hash handling — guarantees the jump happens even though the nav

@@ -81,7 +81,8 @@
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.primaryButton:hover {
+.primaryButton:hover,
+.primaryButton:active {
   background: var(--aur-cream);
   color: var(--aur-green);
   transform: translateY(-2px);
@@ -103,12 +104,14 @@
   transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
 
-.secondaryButton:hover {
+.secondaryButton:hover,
+.secondaryButton:active {
   background: var(--aur-green-light);
   transform: translateY(-2px);
 }
 
-.contactButton:hover {
+.contactButton:hover,
+.contactButton:active {
   background: var(--aur-gold);
   color: var(--aur-green);
 }
