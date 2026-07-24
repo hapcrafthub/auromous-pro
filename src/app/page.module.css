@@ -15,6 +15,22 @@
   display: block;
 }
 
+/* Mobile-only full-bleed backdrop: same photo, blurred and scaled to cover
+   the whole screen edge-to-edge with no visible letterboxing, sitting
+   behind the sharp, uncropped .heroImage (object-fit:contain on mobile —
+   see media query below) so the wordmark is always fully legible. */
+.heroImageBlurBg {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(35px) brightness(0.55);
+  transform: scale(1.2);
+}
+
 .heroImageFade {
   position: absolute;
   left: 0;
@@ -349,16 +365,19 @@
 
 @media (max-width: 900px) {
   /* Hero image (slide 1) has the wordmark baked into the photo, and the
-     tagline alone spans ~2/3 of the image's width. On a narrow phone,
-     no crop can both fill the screen edge-to-edge AND keep that text
-     uncropped — cover always cuts it. So stop cropping: show the full
-     photo via object-fit:contain (see .heroImage below) and let the
-     section's own dark green background fill in around it, matching the
-     nav/footer green so it reads as a deliberate mat, not empty space.
-     The section itself still fills the full viewport height. */
+     tagline alone spans ~2/3 of the image's width — no crop can fill a
+     narrow screen edge-to-edge AND keep that text uncropped at the same
+     time. Solution: show the full photo uncropped (object-fit:contain)
+     on top of a blurred, full-bleed copy of the same photo (.heroImageBlurBg)
+     instead of a flat color mat, so the screen is fully covered with no
+     visible letterboxing and the wordmark stays completely legible. */
   .heroImageSection {
     height: 100vh;
     height: 100dvh;
+  }
+
+  .heroImageBlurBg {
+    display: block;
   }
 
   .heroImage {

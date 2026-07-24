@@ -62,6 +62,12 @@ export default function Home() {
 
       {/* HERO IMAGE */}
       <section className={styles.heroImageSection}>
+        <img
+          src="/assets/hero-image.jpg"
+          alt=""
+          aria-hidden="true"
+          className={styles.heroImageBlurBg}
+        />
         <img src="/assets/hero-image.jpg" alt="Auromous" className={styles.heroImage} />
         <div className={styles.heroImageFade} />
         <div className={styles.heroImageRule} />
