@@ -15,20 +15,55 @@
   display: block;
 }
 
-/* Mobile-only full-bleed backdrop: same photo, blurred and scaled to cover
-   the whole screen edge-to-edge with no visible letterboxing, sitting
-   behind the sharp, uncropped .heroImage (object-fit:contain on mobile —
-   see media query below) so the wordmark is always fully legible. */
-.heroImageBlurBg {
-  display: none;
+.heroImageOverlay {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: blur(35px) brightness(0.55);
-  transform: scale(1.2);
+  background: linear-gradient(
+    180deg,
+    rgba(19, 42, 28, 0.55) 0%,
+    rgba(19, 42, 28, 0.35) 45%,
+    rgba(19, 42, 28, 0.75) 100%
+  );
+}
+
+/* Real, reflowable text instead of a wordmark baked into the photo — scales
+   cleanly to any screen with zero cropping, unlike the old image-based hero. */
+.heroWordmarkWrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.heroWordmark {
+  display: flex;
+  align-items: baseline;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: clamp(2.75rem, 11vw, 7rem);
+  line-height: 1;
+  color: var(--aur-cream);
+  margin: 0;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.heroWordmarkA {
+  color: var(--aur-gold);
+}
+
+.heroTagline {
+  margin: 18px 0 0;
+  color: var(--aur-cream);
+  opacity: 0.9;
+  font-weight: 500;
+  font-size: clamp(0.95rem, 2.6vw, 1.375rem);
+  letter-spacing: 0.02em;
+  max-width: 640px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .heroImageFade {
@@ -364,24 +399,12 @@
 }
 
 @media (max-width: 900px) {
-  /* Hero image (slide 1) has the wordmark baked into the photo, and the
-     tagline alone spans ~2/3 of the image's width — no crop can fill a
-     narrow screen edge-to-edge AND keep that text uncropped at the same
-     time. Solution: show the full photo uncropped (object-fit:contain)
-     on top of a blurred, full-bleed copy of the same photo (.heroImageBlurBg)
-     instead of a flat color mat, so the screen is fully covered with no
-     visible letterboxing and the wordmark stays completely legible. */
+  /* The wordmark is now real text (see .heroWordmark), so the hero photo
+     is free to crop normally on any screen — no more crop-vs-legibility
+     tradeoff. Just fill the viewport correctly on mobile browser chrome. */
   .heroImageSection {
     height: 100vh;
     height: 100dvh;
-  }
-
-  .heroImageBlurBg {
-    display: block;
-  }
-
-  .heroImage {
-    object-fit: contain;
   }
 
   .storyIntro {

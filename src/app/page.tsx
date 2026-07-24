@@ -62,13 +62,15 @@ export default function Home() {
 
       {/* HERO IMAGE */}
       <section className={styles.heroImageSection}>
-        <img
-          src="/assets/hero-image.jpg"
-          alt=""
-          aria-hidden="true"
-          className={styles.heroImageBlurBg}
-        />
         <img src="/assets/hero-image.jpg" alt="Auromous" className={styles.heroImage} />
+        <div className={styles.heroImageOverlay} />
+        <div className={styles.heroWordmarkWrap}>
+          <div className={styles.heroWordmark}>
+            <span className={styles.heroWordmarkA}>A</span>
+            <span>UROMOUS</span>
+          </div>
+          <p className={styles.heroTagline}>We Build Your Operations, You Own The Market</p>
+        </div>
         <div className={styles.heroImageFade} />
         <div className={styles.heroImageRule} />
         <div className={styles.scrollChevron}>
