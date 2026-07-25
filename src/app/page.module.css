@@ -15,26 +15,6 @@
   display: block;
 }
 
-/* Logo is a real transparent PNG (background cleanly removed), so it just
-   sits centered over the photo — no blend tricks or filters needed. A soft
-   drop-shadow grounds it visually without touching its own opacity. */
-.heroLogoWrap {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24px;
-  pointer-events: none;
-}
-
-.heroLogo {
-  display: block;
-  width: clamp(300px, 86vw, 1000px);
-  height: auto;
-  filter: drop-shadow(0 6px 28px rgba(0, 0, 0, 0.55));
-}
-
 .heroImageFade {
   position: absolute;
   left: 0;
