@@ -65,7 +65,7 @@ export default function Home() {
         <img src="/assets/hero-bg.jpg" alt="Auromous" className={styles.heroImage} />
         <div className={styles.heroLogoWrap}>
           <img
-            src="/assets/hero-logo.png"
+            src="/assets/hero-logo-v2.png"
             alt="Auromous — We Build Your Operations, You Own The Market"
             className={styles.heroLogo}
           />
