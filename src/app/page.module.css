@@ -3,6 +3,10 @@
   height: 100vh;
   overflow: hidden;
   background: var(--aur-green);
+  /* Scopes mix-blend-mode (used on .heroLogo below) to this section only,
+     which also sidesteps a WebKit/Safari edge-rendering glitch where blend
+     modes near a stacking-context boundary can produce a hairline seam. */
+  isolation: isolate;
 }
 
 .heroImage {
@@ -46,6 +50,15 @@
   width: clamp(300px, 86vw, 1000px);
   height: auto;
   mix-blend-mode: screen;
+  /* JPEG compression leaves the "black" background a few shades off true
+     black, which mix-blend-mode:screen would otherwise render as a faint
+     visible rectangle. Crushing contrast pushes that residual noise down
+     to true 0 (fully transparent) while pushing the already-bright
+     gold/cream lettering up to full brightness. */
+  filter: contrast(1.6);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .heroImageFade {
