@@ -15,6 +15,39 @@
   display: block;
 }
 
+/* Safety net behind the logo so mix-blend-mode:screen (below) stays legible
+   even over brighter patches of the photo. */
+.heroLogoVignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 45% at center,
+    rgba(9, 15, 11, 0.45) 0%,
+    rgba(9, 15, 11, 0) 70%
+  );
+}
+
+/* Logo graphic has a solid black background (JPEG, no alpha channel) —
+   mix-blend-mode:screen drops black to fully transparent against the dark
+   photo behind it while the bright gold/cream wordmark stays crisp, so no
+   image editing is needed to "cut it out". */
+.heroLogoWrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: none;
+}
+
+.heroLogo {
+  display: block;
+  width: clamp(300px, 86vw, 1000px);
+  height: auto;
+  mix-blend-mode: screen;
+}
+
 .heroImageFade {
   position: absolute;
   left: 0;

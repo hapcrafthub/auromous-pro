@@ -63,6 +63,14 @@ export default function Home() {
       {/* HERO IMAGE */}
       <section className={styles.heroImageSection}>
         <img src="/assets/hero-bg.jpg" alt="Auromous" className={styles.heroImage} />
+        <div className={styles.heroLogoVignette} />
+        <div className={styles.heroLogoWrap}>
+          <img
+            src="/assets/hero-logo.jpg"
+            alt="Auromous — We Build Your Operations, You Own The Market"
+            className={styles.heroLogo}
+          />
+        </div>
         <div className={styles.heroImageFade} />
         <div className={styles.heroImageRule} />
         <div className={styles.scrollChevron}>
