@@ -52,10 +52,11 @@
   mix-blend-mode: screen;
   /* JPEG compression leaves the "black" background a few shades off true
      black, which mix-blend-mode:screen would otherwise render as a faint
-     visible rectangle. Crushing contrast pushes that residual noise down
-     to true 0 (fully transparent) while pushing the already-bright
-     gold/cream lettering up to full brightness. */
-  filter: contrast(1.6);
+     visible rectangle — contrast crushes that residual noise toward true 0.
+     Pairing it with a brightness pulldown keeps the effect from also
+     blowing the cream lettering out to a harsh pure white; this pulls it
+     back toward the site's actual warm cream tone. */
+  filter: contrast(1.3) brightness(0.93);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
