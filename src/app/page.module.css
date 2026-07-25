@@ -34,7 +34,7 @@
   display: block;
   width: clamp(300px, 86vw, 1000px);
   height: auto;
-  filter: drop-shadow(0 4px 10px rgba(9, 15, 11, 0.32));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)) drop-shadow(0 4px 10px rgba(9, 15, 11, 0.32));
 }
 
 .heroImageFade {
