@@ -13,6 +13,8 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  filter: blur(2px) brightness(0.82);
+  transform: scale(1.02);
 }
 
 /* Logo is a real transparent PNG (checkerboard background removed, colors
